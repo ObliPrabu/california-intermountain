@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>California Intermountain</title>
+<meta name="description" content="A look at the tribes, climate, and physical features of the California Intermountain region, by Cole Bataille and Mithran Obliprabu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf5ec;
+    --surface: #fffdf8;
+    --ink: #2a2118;
+    --muted: #6b5d4d;
+    --accent: #b5532a;
+    --accent-2: #3f6b4f;
+    --line: #e6dccb;
+    --shadow: 0 10px 30px rgba(80, 50, 20, .08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17130f;
+      --surface: #211b15;
+      --ink: #f3eadb;
+      --muted: #b8a994;
+      --accent: #e08a5b;
+      --accent-2: #8fc09f;
+      --line: #342b22;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; margin: 0; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: center; gap: 1.5rem;
+    padding: .9rem 1rem;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-size: .92rem; font-weight: 500;
+  }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+
+  .hero {
+    position: relative; overflow: hidden;
+    text-align: center;
+    padding: 7rem 1.25rem 9rem;
+    background:
+      radial-gradient(circle at 75% 25%, #f6c06a 0 60px, transparent 62px),
+      linear-gradient(180deg, #f4d9b0 0%, #e8a46a 55%, #c9693a 100%);
+    color: #2a1608;
+  }
+  .hero .eyebrow {
+    text-transform: uppercase; letter-spacing: .22em; font-size: .78rem; font-weight: 600;
+    opacity: .75; margin-bottom: 1rem;
+  }
+  .hero h1 { font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 700; }
+  .hero .byline { margin-top: 1.25rem; font-size: 1.1rem; }
+  .hero .byline strong { font-weight: 600; }
+  .mountains { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 130px; display: block; }
+  .mountains .back { fill: #8a4a2b; opacity: .55; }
+  .mountains .mid  { fill: #5b3a2a; opacity: .8; }
+  .mountains .front { fill: var(--bg); }
+
+  main { max-width: 920px; margin: 0 auto; padding: 1rem 1.25rem 4rem; }
+  section { padding: 3.5rem 0 1rem; }
+  .label {
+    display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: .6rem;
+  }
+  h2 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin-bottom: 1rem; }
+  p { margin: 0 0 1rem; color: var(--ink); }
+  .lead { color: var(--muted); font-size: 1.15rem; }
+
+  .tribes {
+    display: grid; gap: 1rem; margin-top: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  }
+  .tribe {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 1.4rem 1.2rem; box-shadow: var(--shadow);
+    transition: transform .2s ease;
+  }
+  .tribe:hover { transform: translateY(-4px); }
+  .tribe .dot {
+    width: 38px; height: 38px; border-radius: 50%; margin-bottom: .9rem;
+    display: grid; place-items: center; color: #fff; font-family: "Fraunces", serif; font-weight: 700;
+    background: var(--accent);
+  }
+  .tribe:nth-child(2) .dot { background: var(--accent-2); }
+  .tribe:nth-child(3) .dot { background: #c99a2e; }
+  .tribe:nth-child(4) .dot { background: #7a5a8c; }
+  .tribe h3 { font-size: 1.3rem; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 1.75rem; box-shadow: var(--shadow);
+  }
+  .split { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin: 1.5rem 0; }
+  .temp { border-radius: 16px; padding: 1.4rem; color: #fff; }
+  .temp.cold { background: linear-gradient(135deg, #3b6a9c, #6aa3c8); }
+  .temp.hot  { background: linear-gradient(135deg, #c4521f, #e8a14a); }
+  .temp h3 { font-size: 1.25rem; margin-bottom: .3rem; }
+  .temp p { color: #fff; margin: 0; opacity: .92; font-size: .98rem; }
+
+  .roles { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin: 1.5rem 0; }
+  .role { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.3rem; }
+  .role h3 { font-size: 1.15rem; margin-bottom: .35rem; color: var(--accent-2); }
+  .role p { margin: 0; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.25rem; }
+  .chip {
+    padding: .45rem .95rem; border-radius: 999px; font-size: .92rem; font-weight: 500;
+    background: color-mix(in srgb, var(--accent-2) 14%, transparent);
+    color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
+  }
+
+  footer {
+    text-align: center; padding: 2.5rem 1rem 3rem; color: var(--muted);
+    border-top: 1px solid var(--line); font-size: .92rem;
+  }
+
+  @media (max-width: 600px) {
+    .split, .roles { grid-template-columns: 1fr; }
+    nav { gap: 1rem; font-size: .85rem; }
+    .hero { padding: 5rem 1.25rem 8rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .tribe { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#tribes">Tribes</a>
+  <a href="#climate">Climate</a>
+  <a href="#features">Physical Features</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">A regional study</div>
+  <h1>California<br>Intermountain</h1>
+  <p class="byline">By <strong>Cole Bataille</strong> and <strong>Mithran Obliprabu</strong></p>
+  <svg class="mountains" viewBox="0 0 1200 130" preserveAspectRatio="none" aria-hidden="true">
+    <path class="back" d="M0 130 L0 70 L150 20 L290 75 L430 30 L580 85 L730 25 L880 80 L1030 35 L1200 75 L1200 130Z"/>
+    <path class="mid" d="M0 130 L0 95 L120 55 L260 100 L420 60 L560 105 L720 55 L880 100 L1040 60 L1200 100 L1200 130Z"/>
+    <path class="front" d="M0 130 L0 115 L200 95 L420 118 L640 98 L860 120 L1040 100 L1200 116 L1200 130Z"/>
+  </svg>
+</header>
+
+<main>
+  <section id="tribes">
+    <span class="label">Peoples of the region</span>
+    <h2>Tribes</h2>
+    <p class="lead">The tribes in California Intermountain are the Shoshones, the Paiutes, the Miwoks, and the Pomos.</p>
+    <div class="tribes">
+      <div class="tribe"><div class="dot">S</div><h3>Shoshones</h3></div>
+      <div class="tribe"><div class="dot">P</div><h3>Paiutes</h3></div>
+      <div class="tribe"><div class="dot">M</div><h3>Miwoks</h3></div>
+      <div class="tribe"><div class="dot">P</div><h3>Pomos</h3></div>
+    </div>
+    <p style="margin-top:1.5rem">They were called the Indigenous Californians or the Native Californians there in the California Intermountain region.</p>
+  </section>
+
+  <section id="climate">
+    <span class="label">Weather and land</span>
+    <h2>Climate</h2>
+    <p>California has a mild climate but the Great Basin near California had a very hot climate with limited rainfall.</p>
+    <div class="split">
+      <div class="temp cold"><h3>Cold</h3><p>Temperatures swung down...</p></div>
+      <div class="temp hot"><h3>Hot</h3><p>...and back up again, often.</p></div>
+    </div>
+    <p>California switched temperatures from cold to hot often, so that’s why it’s considered a mild climate.</p>
+  </section>
+
+  <section id="features">
+    <span class="label">Land and life</span>
+    <h2>Physical Features of California</h2>
+    <p class="lead">They hunted and fished.</p>
+    <div class="roles">
+      <div class="role"><h3>Men</h3><p>Hunted and fished.</p></div>
+      <div class="role"><h3>Women</h3><p>Collected plant foods and small game.</p></div>
+    </div>
+    <div class="card">
+      <p style="margin:0">The physical features of California were good water sources, landforms, and it looked very beautiful before.</p>
+      <div class="chips">
+        <span class="chip">Good water sources</span>
+        <span class="chip">Landforms</span>
+        <span class="chip">Very beautiful</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  California Intermountain &middot; Cole Bataille &amp; Mithran Obliprabu
+</footer>
+
+</body>
+</html>
