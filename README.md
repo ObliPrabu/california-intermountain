@@ -6,6 +6,8 @@
 
 *A look at the people and land of the California Intermountain region.*
 
+**🌐 [View the website](https://obliprabu.github.io/california-intermountain/)**
+
 ![Region](https://img.shields.io/badge/Region-California%20Intermountain-2e7d32?style=for-the-badge)
 ![Topics](https://img.shields.io/badge/Topics-4-1565c0?style=for-the-badge)
 ![Type](https://img.shields.io/badge/Type-Research%20Notes-ef6c00?style=for-the-badge)
