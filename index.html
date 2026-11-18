@@ -128,6 +128,22 @@
     color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
   }
 
+  .gallery {
+    display: grid; gap: 1rem; margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  .gallery figure {
+    margin: 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);
+  }
+  .gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .gallery figcaption { padding: .8rem 1rem; font-size: .92rem; color: var(--muted); }
+  .gallery-empty {
+    border: 2px dashed var(--line); border-radius: 16px; padding: 2.5rem 1.5rem;
+    text-align: center; color: var(--muted); margin-top: 1.5rem;
+  }
+  .gallery:not(:empty) + .gallery-empty { display: none; }
+
   footer {
     text-align: center; padding: 2.5rem 1rem 3rem; color: var(--muted);
     border-top: 1px solid var(--line); font-size: .92rem;
@@ -151,6 +167,7 @@
   <a href="#climate">Climate</a>
   <a href="#features">Physical Features</a>
   <a href="#resources">Resources</a>
+  <a href="#photos">Photos</a>
 </nav>
 
 <header class="hero">
@@ -217,6 +234,15 @@
         <span class="chip">Dinosaur fossils</span>
       </div>
     </div>
+  </section>
+
+  <section id="photos">
+    <span class="label">Pictures</span>
+    <h2>Photos</h2>
+    <!-- Add photos here, one per line:
+    <figure><img src="photos/example.jpg" alt="Describe the photo" loading="lazy"><figcaption>Caption</figcaption></figure>
+    --><div class="gallery"></div>
+    <div class="gallery-empty">Photos coming soon.</div>
   </section>
 </main>
 
