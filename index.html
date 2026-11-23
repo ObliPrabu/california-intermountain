@@ -129,6 +129,19 @@
     color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
   }
 
+  .inline-photo {
+    margin: 1.5rem 0 0; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; overflow: hidden; box-shadow: var(--shadow);
+  }
+  .inline-photo img { display: block; width: 100%; height: auto; }
+  .inline-photo.wide img { aspect-ratio: 16 / 9; object-fit: cover; }
+  .inline-photo.contain img { max-height: 520px; object-fit: contain; }
+  .inline-photo figcaption { padding: .8rem 1rem; font-size: .92rem; color: var(--muted); }
+  .photo-row { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.5rem; }
+  .photo-row .inline-photo { margin: 0; }
+  .photo-row .inline-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
+  @media (max-width: 600px) { .photo-row { grid-template-columns: 1fr; } }
+
   .gallery {
     display: grid; gap: 1rem; margin-top: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -201,6 +214,7 @@
       <div class="tribe"><div class="dot">P</div><h3>Pomos</h3></div>
     </div>
     <p style="margin-top:1.5rem">They were called the Indigenous Californians or the Native Californians there in the California Intermountain region.</p>
+    <figure class="inline-photo contain"><img src="photos/photo-12.png" alt="Map of California tribes divided into Northern, Central, Great Basin and Southern regions" loading="lazy"><figcaption>California Tribes: Northern, Central, Great Basin, and Southern regions.</figcaption></figure>
   </section>
 
   <section id="climate">
@@ -249,12 +263,14 @@
     <h2>A Bridge Between Barriers</h2>
     <p class="lead">From Pacific ocean mist and towering coastal redwoods, across the granite spine of the Sierra Nevada, to the sagebrush flats of the Great Basin.</p>
     <p>To understand the American West, you have to look at the land between the barriers. This is the California Intermountain region, a vast geographic and cultural bridge stretching from the mild shores of the Pacific Ocean, across the towering walls of the Cascade and Sierra Nevada ranges, and out into the high, arid expanse of the Great Basin.</p>
+    <figure class="inline-photo contain"><img src="photos/photo-6.png" alt="Map of American Indian cultural regions, with the California Intermountain Region in green on the west coast" loading="lazy"><figcaption>American Indian cultural regions. The California Intermountain Region runs down the West Coast.</figcaption></figure>
   </section>
 
   <section id="coast">
     <span class="label">I.</span>
     <h2>Coast &amp; Coastal Forests</h2>
     <p>Waves crash against rugged cliffs as mist rises off the cold ocean water. Dense coastal forests of towering redwoods stretch inland, fed by marine mist.</p>
+    <figure class="inline-photo wide"><img src="photos/photo-1.avif" alt="Pacific waves breaking along a rugged coast" loading="lazy"><figcaption>Cold Pacific waters meet rugged coastal cliffs where marine mist feeds inland forests.</figcaption></figure>
   </section>
 
   <section id="mountains">
@@ -262,6 +278,10 @@
     <h2>The Mountain Barrier &amp; Rain Shadow</h2>
     <p>Jagged granite peaks, dusted with snow, rise along the Sierra Nevada crest, where sunlight glints off alpine lakes and rushing rivers carve deep valleys through the rock.</p>
     <p>The green forests give way to the rain shadow, where flats of sagebrush, salt pans, and distant basin-and-range mountains shimmer under a wide, cloudless sky. Few places pack so many extremes into a single corridor. Within a few hundred miles, coastal forests give way to alpine tundra, and alpine tundra drops into some of the driest desert valleys in North America.</p>
+    <div class="photo-row">
+      <figure class="inline-photo"><img src="photos/photo-2.avif" alt="Snow-capped granite peaks above a forested valley" loading="lazy"><figcaption>Jagged granite peaks and alpine basins along the Sierra Nevada crest.</figcaption></figure>
+      <figure class="inline-photo"><img src="photos/photo-3.avif" alt="A road running between red rock formations toward a distant mountain" loading="lazy"><figcaption>Dry country stretches east of the mountains.</figcaption></figure>
+    </div>
   </section>
 
   <section id="western-slope">
@@ -269,6 +289,10 @@
     <h2>Abundance on the Western Slope</h2>
     <p>Sunlight filters through sprawling valley oaks as clusters of acorns hang heavy on the branches. For thousands of years, Indigenous nations have known and cared for this diverse landscape, including the Maidu along with the Pomo and Miwok.</p>
     <p>People harvested salmon from coastal rivers, gathered shellfish along the tides, and turned the autumn acorn harvest into a year-round staple through careful leaching and stone-boiling. Basketry traditions used local plants and materials, with designs and practices particular to each community.</p>
+    <div class="photo-row">
+      <figure class="inline-photo"><img src="photos/photo-4.avif" alt="A dirt path through a tall green forest" loading="lazy"><figcaption>Forests, rivers, and valleys support a rich variety of life and cultural traditions.</figcaption></figure>
+      <figure class="inline-photo"><img src="photos/photo-10.png" alt="A dome-shaped home covered in thatch with an arched doorway, under oak trees" loading="lazy"><figcaption>A dome-shaped home made of thatch, with an arched doorway.</figcaption></figure>
+    </div>
   </section>
 
   <section id="great-basin">
@@ -294,6 +318,7 @@
     <div class="card">
       <p style="margin:0">The California Intermountain region is not simply a passage between places. It is a living landscape, shaped by its communities, its seasonal rhythms, and the ongoing relationship between people and the natural world.</p>
     </div>
+    <figure class="inline-photo wide"><img src="photos/photo-5.avif" alt="A calm lake reflecting evergreen trees with mountains behind" loading="lazy"><figcaption>Lakes and evergreen forests beneath the mountain ranges.</figcaption></figure>
   </section>
 
   <section id="photos">
@@ -302,18 +327,10 @@
     <!-- Add photos here, one per line:
     <figure><img src="photos/example.jpg" alt="Describe the photo" loading="lazy"><figcaption>Caption</figcaption></figure>
     --><div class="gallery">
-      <figure><img src="photos/photo-1.avif" alt="Pacific waves breaking along a rugged coast" loading="lazy"><figcaption>Cold Pacific waters meet rugged coastal cliffs where marine mist feeds inland forests.</figcaption></figure>
-      <figure><img src="photos/photo-2.avif" alt="Snow-capped granite peaks above a forested valley" loading="lazy"><figcaption>Jagged granite peaks and alpine basins along the Sierra Nevada crest.</figcaption></figure>
-      <figure><img src="photos/photo-3.avif" alt="A road running between red rock formations toward a distant mountain" loading="lazy"><figcaption>Dry country stretches east of the mountains.</figcaption></figure>
-      <figure><img src="photos/photo-4.avif" alt="A dirt path through a tall green forest" loading="lazy"><figcaption>Forests, rivers, and valleys support a rich variety of life and cultural traditions.</figcaption></figure>
-      <figure><img src="photos/photo-5.avif" alt="A calm lake reflecting evergreen trees with mountains behind" loading="lazy"><figcaption>Lakes and evergreen forests beneath the mountain ranges.</figcaption></figure>
-      <figure><img src="photos/photo-6.png" alt="Map of American Indian cultural regions, with the California Intermountain Region in green on the west coast" loading="lazy"><figcaption>American Indian cultural regions. The California Intermountain Region runs down the West Coast.</figcaption></figure>
       <figure><img src="photos/photo-7.png" alt="Illustration of a thatched dome-shaped home with a person kneeling by a fire inside" loading="lazy"><figcaption>A thatched, dome-shaped home with a fire inside.</figcaption></figure>
       <figure><img src="photos/photo-8.png" alt="Black and white map of Native American regions of the United States, with California Intermountain on the west side" loading="lazy"><figcaption>Map of Native American regions.</figcaption></figure>
       <figure><img src="photos/photo-9.png" alt="Historical black and white photograph of a woman wearing a beaded headband and long strands of beads, holding two objects" loading="lazy"><figcaption>A historical photograph of a woman wearing a beaded headband and long strands of beads.</figcaption></figure>
-      <figure><img src="photos/photo-10.png" alt="A dome-shaped home covered in thatch with an arched doorway, under oak trees" loading="lazy"><figcaption>A dome-shaped home made of thatch, with an arched doorway.</figcaption></figure>
       <figure><img src="photos/photo-11.png" alt="Historical black and white photograph of a man wearing a feathered headdress and holding a staff" loading="lazy"><figcaption>A historical photograph of a man in a feathered headdress holding a staff.</figcaption></figure>
-      <figure><img src="photos/photo-12.png" alt="Map of California tribes divided into Northern, Central, Great Basin and Southern regions" loading="lazy"><figcaption>California Tribes: Northern, Central, Great Basin, and Southern regions.</figcaption></figure>
       <figure><img src="photos/photo-13.png" alt="A dancer in colorful regalia with feathers and fringe dancing on a grass field at a gathering" loading="lazy"><figcaption>A dancer in feathered regalia at a gathering, with other dancers behind.</figcaption></figure>
     </div>
     <div class="gallery-empty">Photos coming soon.</div>
