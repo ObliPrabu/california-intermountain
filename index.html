@@ -141,6 +141,7 @@
   .photo-row .inline-photo { margin: 0; }
   .photo-row .inline-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
   .photo-row.maps .inline-photo img { aspect-ratio: 4 / 3; object-fit: contain; background: var(--surface); }
+  .photo-row.portraits .inline-photo img { aspect-ratio: 3 / 4; object-fit: cover; object-position: center 20%; }
   @media (max-width: 600px) { .photo-row { grid-template-columns: 1fr; } }
 
   .gallery {
@@ -193,7 +194,6 @@
   <a href="#railroad">Railroad</a>
   <a href="#water">Water &amp; Today</a>
   <a href="#extra">Extra Info</a>
-  <a href="#photos">Photos</a>
 </nav>
 
 <header class="hero">
@@ -277,6 +277,10 @@
     <span class="label">What they wore</span>
     <h2>Clothing</h2>
     <p>California people wore little clothing. Women wore a skirt made of animal skin or plant fibers and because the weather was usually pretty mild, Indigenous people in the California-Intermountain region mostly wore light, simple clothes made from animal skins and local plants.</p>
+    <div class="photo-row portraits">
+      <figure class="inline-photo"><img src="photos/photo-9.png" alt="Historical black and white photograph of a woman wearing a beaded headband and long strands of beads, holding two objects" loading="lazy"><figcaption>A historical photograph of a woman wearing a beaded headband and long strands of beads.</figcaption></figure>
+      <figure class="inline-photo"><img src="photos/photo-11.png" alt="Historical black and white photograph of a man wearing a feathered headdress and holding a staff" loading="lazy"><figcaption>A historical photograph of a man in a feathered headdress holding a staff.</figcaption></figure>
+    </div>
   </section>
 
   <section id="tools">
@@ -366,18 +370,6 @@
     <h2>Extra Information</h2>
     <p>A culture area is a geographic region in which people share certain traits. California is one of the 10 culture areas that people use to study the Indigenous people of the US and Canada. There were a lot of dancers there.</p>
     <figure class="inline-photo wide"><img src="photos/photo-13.png" alt="A dancer in colorful regalia with feathers and fringe dancing on a grass field at a gathering" loading="lazy"><figcaption>A dancer in feathered regalia at a gathering, with other dancers behind.</figcaption></figure>
-  </section>
-
-  <section id="photos">
-    <span class="label">Pictures</span>
-    <h2>Photos</h2>
-    <!-- Add photos here, one per line:
-    <figure><img src="photos/example.jpg" alt="Describe the photo" loading="lazy"><figcaption>Caption</figcaption></figure>
-    --><div class="gallery">
-      <figure><img src="photos/photo-9.png" alt="Historical black and white photograph of a woman wearing a beaded headband and long strands of beads, holding two objects" loading="lazy"><figcaption>A historical photograph of a woman wearing a beaded headband and long strands of beads.</figcaption></figure>
-      <figure><img src="photos/photo-11.png" alt="Historical black and white photograph of a man wearing a feathered headdress and holding a staff" loading="lazy"><figcaption>A historical photograph of a man in a feathered headdress holding a staff.</figcaption></figure>
-    </div>
-    <div class="gallery-empty">Photos coming soon.</div>
   </section>
   <section id="thanks">
     <div class="card" style="text-align:center">
